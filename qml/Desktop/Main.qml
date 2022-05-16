@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -23,8 +23,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.FileManager 1.0 as FM
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0 as FM
+import MatsyaUI 1.0 as MatsyaUI
 import "../"
 
 Item {
@@ -159,7 +159,7 @@ Item {
             width: 0
             height: 0
             z: 99999
-            color: FishUI.Theme.highlightColor
+            color: MatsyaUI.Theme.highlightColor
 
             function close() {
                 opacityAnimation.restart()

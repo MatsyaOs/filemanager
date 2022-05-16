@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Core DBus Quick LinguistTools REQUIRED)
-# find_package(FishUI REQUIRED)
+# find_package(MatsyaUI REQUIRED)
 
 find_package(KF5KIO)
 find_package(KF5Solid)
@@ -20,10 +20,10 @@ find_package(KF5WindowSystem)
 find_package(KF5Config)
 
 qt5_add_dbus_adaptor(DBUS_SOURCES
-                     com.cutefish.FileManager.xml
+                     com.matsya.FileManager.xml
                      application.h Application)
 
-add_executable(cutefish-filemanager
+add_executable(matsya-filemanager
   main.cpp
   application.cpp
   window.cpp
@@ -74,7 +74,7 @@ add_executable(cutefish-filemanager
   ${DBUS_SOURCES}
 )
 
-target_link_libraries(cutefish-filemanager
+target_link_libraries(matsya-filemanager
   PRIVATE
   Qt5::Core
   Qt5::DBus
@@ -87,14 +87,14 @@ target_link_libraries(cutefish-filemanager
   KF5::WindowSystem
   KF5::ConfigCore
 
-  # FishUI
+  # MatsyaUI
 )
 
 file(GLOB TS_FILES translations/*.ts)
 qt5_create_translation(QM_FILES ${TS_FILES})
 add_custom_target(translations DEPENDS ${QM_FILES} SOURCES ${TS_FILES})
-add_dependencies(cutefish-filemanager translations)
+add_dependencies(matsya-filemanager translations)
 
-install(TARGETS cutefish-filemanager RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
-install(FILES cutefish-filemanager.desktop DESTINATION "/usr/share/applications")
-install(FILES ${QM_FILES} DESTINATION /usr/share/cutefish-filemanager/translations)
+install(TARGETS matsya-filemanager RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(FILES matsya-filemanager.desktop DESTINATION "/usr/share/applications")
+install(FILES ${QM_FILES} DESTINATION /usr/share/matsya-filemanager/translations)

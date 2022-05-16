@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,8 +21,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
-import FishUI 1.0 as FishUI
-import Cutefish.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
+import Matsya.FileManager 1.0
 
 Item {
     id: _listItem
@@ -41,10 +41,10 @@ Item {
     property bool selected: model.selected
     property bool blank: model.blank
 
-    property color hoveredColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.backgroundColor, 2.3)
-                                                       : Qt.darker(FishUI.Theme.backgroundColor, 1.05)
-    property color selectedColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.backgroundColor, 1.2)
-                                                        : Qt.darker(FishUI.Theme.backgroundColor, 1.15)
+    property color hoveredColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.backgroundColor, 2.3)
+                                                       : Qt.darker(MatsyaUI.Theme.backgroundColor, 1.05)
+    property color selectedColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.backgroundColor, 1.2)
+                                                        : Qt.darker(MatsyaUI.Theme.backgroundColor, 1.15)
 //    onSelectedChanged: {
 //        if (selected && !blank) {
 //            _listItem.grabToImage(function(result) {
@@ -59,8 +59,8 @@ Item {
     Rectangle {
         id: _background
         anchors.fill: parent
-        radius: FishUI.Theme.smallRadius
-        color: selected ? FishUI.Theme.highlightColor : hovered ? hoveredColor : "transparent"
+        radius: MatsyaUI.Theme.smallRadius
+        color: selected ? MatsyaUI.Theme.highlightColor : hovered ? hoveredColor : "transparent"
         visible: selected || hovered
         opacity: selected ? 0.1 : 2
     }
@@ -68,9 +68,9 @@ Item {
     RowLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.leftMargin: FishUI.Units.smallSpacing
-        anchors.rightMargin: FishUI.Units.smallSpacing
-        spacing: FishUI.Units.largeSpacing
+        anchors.leftMargin: MatsyaUI.Units.smallSpacing
+        anchors.rightMargin: MatsyaUI.Units.smallSpacing
+        spacing: MatsyaUI.Units.largeSpacing
 
         Item {
             id: iconItem
@@ -136,7 +136,7 @@ Item {
                 id: _label
                 text: model.fileName
                 Layout.fillWidth: true
-                color: selected ? FishUI.Theme.highlightColor : FishUI.Theme.textColor
+                color: selected ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.textColor
                 textFormat: Text.PlainText
                 elide: Qt.ElideMiddle
                 opacity: model.isHidden ? 0.8 : 1.0
@@ -145,7 +145,7 @@ Item {
             Label {
                 id: _label2
                 text: model.fileSize
-                color: selected ? FishUI.Theme.highlightColor : FishUI.Theme.disabledTextColor
+                color: selected ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.disabledTextColor
                 textFormat: Text.PlainText
                 Layout.fillWidth: true
                 opacity: model.isHidden ? 0.8 : 1.0
@@ -155,7 +155,7 @@ Item {
         Label {
             text: model.modified
             textFormat: Text.PlainText
-            color: selected ? FishUI.Theme.highlightColor : FishUI.Theme.disabledTextColor
+            color: selected ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.disabledTextColor
             opacity: model.isHidden ? 0.8 : 1.0
         }
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,11 +21,11 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
 import "./Controls"
 
-FishUI.Window {
+MatsyaUI.Window {
     id: root
     width: settings.width
     height: settings.height
@@ -35,7 +35,7 @@ FishUI.Window {
     title: qsTr("File Manager")
 
     background.opacity: 1
-    header.height: 36 + FishUI.Units.largeSpacing
+    header.height: 36 + MatsyaUI.Units.largeSpacing
 
     LayoutMirroring.enabled: Qt.application.layoutDirection === Qt.RightToLeft
     LayoutMirroring.childrenInherit: true
@@ -57,17 +57,17 @@ FishUI.Window {
     headerItem: Item {
         RowLayout {
             anchors.fill: parent
-            anchors.leftMargin: FishUI.Units.smallSpacing * 1.5
-            anchors.rightMargin: FishUI.Units.smallSpacing * 1.5
-            anchors.topMargin: FishUI.Units.smallSpacing * 1.5
-            anchors.bottomMargin: FishUI.Units.smallSpacing * 1.5
+            anchors.leftMargin: MatsyaUI.Units.smallSpacing * 1.5
+            anchors.rightMargin: MatsyaUI.Units.smallSpacing * 1.5
+            anchors.topMargin: MatsyaUI.Units.smallSpacing * 1.5
+            anchors.bottomMargin: MatsyaUI.Units.smallSpacing * 1.5
 
-            spacing: FishUI.Units.smallSpacing
+            spacing: MatsyaUI.Units.smallSpacing
 
             IconButton {
                 Layout.fillHeight: true
                 implicitWidth: height
-                source: FishUI.Theme.darkMode ? "qrc:/images/dark/go-previous.svg"
+                source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/go-previous.svg"
                                               : "qrc:/images/light/go-previous.svg"
                 onClicked: _folderPage.goBack()
             }
@@ -75,7 +75,7 @@ FishUI.Window {
             IconButton {
                 Layout.fillHeight: true
                 implicitWidth: height
-                source: FishUI.Theme.darkMode ? "qrc:/images/dark/go-next.svg"
+                source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/go-next.svg"
                                               : "qrc:/images/light/go-next.svg"
                 onClicked: _folderPage.goForward()
             }
@@ -92,8 +92,8 @@ FishUI.Window {
                 Layout.fillHeight: true
                 implicitWidth: height
 
-                property var gridSource: FishUI.Theme.darkMode ? "qrc:/images/dark/grid.svg" : "qrc:/images/light/grid.svg"
-                property var listSource: FishUI.Theme.darkMode ? "qrc:/images/dark/list.svg" : "qrc:/images/light/list.svg"
+                property var gridSource: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/grid.svg" : "qrc:/images/light/grid.svg"
+                property var listSource: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/list.svg" : "qrc:/images/light/list.svg"
 
                 source: settings.viewMethod === 0 ? listSource : gridSource
 
@@ -111,7 +111,7 @@ FishUI.Window {
         SideBar {
             id: _sideBar
             Layout.fillHeight: true
-            width: 180 + FishUI.Units.largeSpacing
+            width: 180 + MatsyaUI.Units.largeSpacing
             onClicked: _folderPage.openUrl(path)
             onOpenInNewWindow: _folderPage.model.openInNewWindow(path)
         }

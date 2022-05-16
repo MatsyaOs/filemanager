@@ -448,7 +448,7 @@ void MimeAppManager::launchTerminal(const QString &path)
     if (m_terminalApps.isEmpty())
         return;
 
-    QSettings settings("cutefishos", "defaultApps");
+    QSettings settings("matsyaos", "defaultApps");
     QString defaultTerminal = settings.value("terminal").toString();
     QString command;
 

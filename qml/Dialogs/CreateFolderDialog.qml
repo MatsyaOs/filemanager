@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -20,7 +20,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
 Window {
     id: control
@@ -29,8 +29,8 @@ Window {
     flags: Qt.Dialog
     visible: true
 
-    width: 400 + FishUI.Units.largeSpacing * 2
-    height: _mainLayout.implicitHeight + FishUI.Units.largeSpacing * 2
+    width: 400 + MatsyaUI.Units.largeSpacing * 2
+    height: _mainLayout.implicitHeight + MatsyaUI.Units.largeSpacing * 2
 
     minimumWidth: width
     minimumHeight: height
@@ -39,16 +39,16 @@ Window {
 
     Rectangle {
         anchors.fill: parent
-        color: FishUI.Theme.secondBackgroundColor
+        color: MatsyaUI.Theme.secondBackgroundColor
     }
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.margins: FishUI.Units.largeSpacing
-        spacing: FishUI.Units.largeSpacing
+        anchors.margins: MatsyaUI.Units.largeSpacing
+        spacing: MatsyaUI.Units.largeSpacing
 
-        FishUI.ActionTextField {
+        MatsyaUI.ActionTextField {
             id: _textField
             Layout.fillWidth: true
             Keys.onEscapePressed: control.close()
@@ -63,7 +63,7 @@ Window {
             Component.onCompleted: {
                 _textField.selectAll()
             }
-            
+
             rightActions: [
                 Action {
                     icon.source: "image://icontheme/edit-clear"
@@ -75,7 +75,7 @@ Window {
         }
 
         RowLayout {
-            spacing: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

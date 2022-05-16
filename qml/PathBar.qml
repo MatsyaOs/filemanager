@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,8 +21,8 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.FileManager 1.0
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
@@ -34,9 +34,9 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.secondBackgroundColor, 1.3)
-                                     : FishUI.Theme.secondBackgroundColor
-        radius: FishUI.Theme.smallRadius
+        color: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.secondBackgroundColor, 1.3)
+                                     : MatsyaUI.Theme.secondBackgroundColor
+        radius: MatsyaUI.Theme.smallRadius
         z: -1
     }
 
@@ -52,7 +52,7 @@ Item {
 
         leftMargin: 3
         rightMargin: 3
-        spacing: FishUI.Units.smallSpacing
+        spacing: MatsyaUI.Units.smallSpacing
 
         onCountChanged: {
             _pathView.currentIndex = _pathView.count - 1
@@ -67,17 +67,17 @@ Item {
         }
 
         highlight: Rectangle {
-            radius: FishUI.Theme.smallRadius
-            color: Qt.rgba(FishUI.Theme.highlightColor.r,
-                           FishUI.Theme.highlightColor.g,
-                           FishUI.Theme.highlightColor.b, FishUI.Theme.darkMode ? 0.3 : 0.1)
+            radius: MatsyaUI.Theme.smallRadius
+            color: Qt.rgba(MatsyaUI.Theme.highlightColor.r,
+                           MatsyaUI.Theme.highlightColor.g,
+                           MatsyaUI.Theme.highlightColor.b, MatsyaUI.Theme.darkMode ? 0.3 : 0.1)
             smooth: true
         }
 
         delegate: MouseArea {
             id: _item
             height: ListView.view.height - ListView.view.topMargin - ListView.view.bottomMargin
-            width: _name.width + FishUI.Units.largeSpacing
+            width: _name.width + MatsyaUI.Units.largeSpacing
             hoverEnabled: true
             z: -1
 
@@ -87,13 +87,13 @@ Item {
 
             Rectangle {
                 anchors.fill: parent
-                radius: FishUI.Theme.smallRadius
-                color: _item.pressed ? Qt.rgba(FishUI.Theme.textColor.r,
-                                                   FishUI.Theme.textColor.g,
-                                                   FishUI.Theme.textColor.b, FishUI.Theme.darkMode ? 0.05 : 0.1) :
-                       _item.containsMouse ? Qt.rgba(FishUI.Theme.textColor.r,
-                                                     FishUI.Theme.textColor.g,
-                                                     FishUI.Theme.textColor.b, FishUI.Theme.darkMode ? 0.1 : 0.05) :
+                radius: MatsyaUI.Theme.smallRadius
+                color: _item.pressed ? Qt.rgba(MatsyaUI.Theme.textColor.r,
+                                                   MatsyaUI.Theme.textColor.g,
+                                                   MatsyaUI.Theme.textColor.b, MatsyaUI.Theme.darkMode ? 0.05 : 0.1) :
+                       _item.containsMouse ? Qt.rgba(MatsyaUI.Theme.textColor.r,
+                                                     MatsyaUI.Theme.textColor.g,
+                                                     MatsyaUI.Theme.textColor.b, MatsyaUI.Theme.darkMode ? 0.1 : 0.05) :
                                                               "transparent"
 
                 smooth: true
@@ -103,7 +103,7 @@ Item {
                 id: _name
                 text: model.name
                 anchors.centerIn: parent
-                color: selected ? FishUI.Theme.highlightColor : FishUI.Theme.textColor
+                color: selected ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.textColor
             }
         }
     }
@@ -116,14 +116,14 @@ Item {
         inputMethodHints: Qt.ImhUrlCharactersOnly | Qt.ImhNoAutoUppercase
 
         text: _pathBarModel.url
-        color: FishUI.Theme.darkMode ? "white" : "black"
+        color: MatsyaUI.Theme.darkMode ? "white" : "black"
 
         background: Rectangle {
-            radius: FishUI.Theme.smallRadius
-            color: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.secondBackgroundColor, 1.7)
-                                         : FishUI.Theme.secondBackgroundColor
+            radius: MatsyaUI.Theme.smallRadius
+            color: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.secondBackgroundColor, 1.7)
+                                         : MatsyaUI.Theme.secondBackgroundColor
             border.width: 1
-            border.color: FishUI.Theme.highlightColor
+            border.color: MatsyaUI.Theme.highlightColor
         }
 
         onAccepted: {

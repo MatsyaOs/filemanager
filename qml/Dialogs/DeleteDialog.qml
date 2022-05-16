@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -21,10 +21,10 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import FishUI 1.0 as FishUI
-import Cutefish.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
+import Matsya.FileManager 1.0
 
-FishUI.Window {
+MatsyaUI.Window {
     id: control
 
     flags: Qt.Dialog | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint
@@ -39,18 +39,18 @@ FishUI.Window {
     maximumWidth: contentWidth
     maximumHeight: contentHeight
 
-    property var contentWidth: _mainLayout.implicitWidth + FishUI.Units.largeSpacing * 2
-    property var contentHeight: _mainLayout.implicitHeight + control.header.height + FishUI.Units.largeSpacing * 2
+    property var contentWidth: _mainLayout.implicitWidth + MatsyaUI.Units.largeSpacing * 2
+    property var contentHeight: _mainLayout.implicitHeight + control.header.height + MatsyaUI.Units.largeSpacing * 2
 
-    background.color: FishUI.Theme.secondBackgroundColor
+    background.color: MatsyaUI.Theme.secondBackgroundColor
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.leftMargin: FishUI.Units.largeSpacing
-        anchors.rightMargin: FishUI.Units.largeSpacing
-        anchors.bottomMargin: FishUI.Units.smallSpacing
-        spacing: FishUI.Units.largeSpacing
+        anchors.leftMargin: MatsyaUI.Units.largeSpacing
+        anchors.rightMargin: MatsyaUI.Units.largeSpacing
+        anchors.bottomMargin: MatsyaUI.Units.smallSpacing
+        spacing: MatsyaUI.Units.largeSpacing
 
         Label {
             text: qsTr("Do you want to delete it permanently?")
@@ -59,7 +59,7 @@ FishUI.Window {
         }
 
         RowLayout {
-            spacing: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

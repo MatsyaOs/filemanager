@@ -20,14 +20,14 @@ void DBusInterface::ShowFolders(const QStringList &uriList, const QString &start
 {
     Q_UNUSED(startUpId);
 
-    QProcess::startDetached("cutefish-filemanager", uriList);
+    QProcess::startDetached("matsya-filemanager", uriList);
 }
 
 void DBusInterface::ShowItems(const QStringList &uriList, const QString &startUpId)
 {
     Q_UNUSED(startUpId);
 
-    QProcess::startDetached("cutefish-filemanager", uriList);
+    QProcess::startDetached("matsya-filemanager", uriList);
 }
 
 void DBusInterface::ShowItemProperties(const QStringList &uriList, const QString &startUpId)

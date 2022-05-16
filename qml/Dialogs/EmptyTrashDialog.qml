@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -16,15 +16,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtQuick.Layouts 1.12
-import FishUI 1.0 as FishUI
-import Cutefish.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
+import Matsya.FileManager 1.0
 
-FishUI.Window {
+MatsyaUI.Window {
     id: control
 
     title: qsTr("File Manager")
@@ -32,8 +32,8 @@ FishUI.Window {
     minimizeButtonVisible: false
     visible: true
 
-    property int contentWidth: 300 + FishUI.Units.largeSpacing * 2
-    property int contentHeight: _mainLayout.implicitHeight + control.header.height + FishUI.Units.largeSpacing
+    property int contentWidth: 300 + MatsyaUI.Units.largeSpacing * 2
+    property int contentHeight: _mainLayout.implicitHeight + control.header.height + MatsyaUI.Units.largeSpacing
 
     width: contentWidth
     height: contentHeight
@@ -46,7 +46,7 @@ FishUI.Window {
     maximumWidth: contentWidth
     maximumHeight: contentHeight
 
-    headerBackground.color: FishUI.Theme.secondBackgroundColor
+    headerBackground.color: MatsyaUI.Theme.secondBackgroundColor
 
     DragHandler {
         target: null
@@ -61,17 +61,17 @@ FishUI.Window {
 
     Rectangle {
         anchors.fill: parent
-        color: FishUI.Theme.secondBackgroundColor
+        color: MatsyaUI.Theme.secondBackgroundColor
     }
 
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
         anchors.topMargin: 0
-        anchors.leftMargin: FishUI.Units.largeSpacing
-        anchors.rightMargin: FishUI.Units.largeSpacing
-        anchors.bottomMargin: FishUI.Units.largeSpacing
-        spacing: FishUI.Units.largeSpacing
+        anchors.leftMargin: MatsyaUI.Units.largeSpacing
+        anchors.rightMargin: MatsyaUI.Units.largeSpacing
+        anchors.bottomMargin: MatsyaUI.Units.largeSpacing
+        spacing: MatsyaUI.Units.largeSpacing
 
         Label {
             text: qsTr("Do you want to permanently delete all files from the Trash?")
@@ -80,7 +80,7 @@ FishUI.Window {
         }
 
         RowLayout {
-            spacing: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

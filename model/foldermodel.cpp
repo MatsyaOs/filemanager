@@ -109,7 +109,7 @@ FolderModel::FolderModel(QObject *parent)
     , m_currentIndex(-1)
     , m_updateNeedSelectTimer(new QTimer(this))
 {
-    QSettings settings("cutefishos", qApp->applicationName());
+    QSettings settings("matsyaos", qApp->applicationName());
     m_showHiddenFiles = settings.value("showHiddenFiles", false).toBool();
 
     m_updateNeedSelectTimer->setSingleShot(true);
@@ -983,7 +983,7 @@ void FolderModel::paste()
         job->start();
 
         // Clear system clipboard.
-        if (mimeData->hasFormat("application/x-cutefish-cutselection")) {
+        if (mimeData->hasFormat("application/x-matsya-cutselection")) {
             QApplication::clipboard()->clear();
         }
     }
@@ -1001,7 +1001,7 @@ void FolderModel::cut()
     QMimeData *mimeData = QSortFilterProxyModel::mimeData(m_selectionModel->selectedIndexes());
 
     mimeData->setData("application/x-kde-cutselection", QByteArray("1"));
-    mimeData->setData("application/x-cutefish-cutselection", QByteArray("1"));
+    mimeData->setData("application/x-matsya-cutselection", QByteArray("1"));
 
     QApplication::clipboard()->setMimeData(mimeData);
 }
@@ -1119,7 +1119,7 @@ void FolderModel::moveSelectedToTrash()
 
 void FolderModel::emptyTrash()
 {
-    QProcess::startDetached("cutefish-filemanager", QStringList() << "-e");
+    QProcess::startDetached("matsya-filemanager", QStringList() << "-e");
 }
 
 void FolderModel::keyDeletePress()
@@ -1250,8 +1250,8 @@ void FolderModel::setWallpaperSelected()
     if (!url.isLocalFile())
         return;
 
-    QDBusInterface iface("com.cutefish.Settings", "/Theme",
-                         "com.cutefish.Theme",
+    QDBusInterface iface("com.matsya.Settings", "/Theme",
+                         "com.matsya.Theme",
                          QDBusConnection::sessionBus(), nullptr);
     if (iface.isValid())
         iface.call("setWallpaper", url.toLocalFile());
@@ -1381,7 +1381,7 @@ void FolderModel::openInTerminal()
 
 void FolderModel::openChangeWallpaperDialog()
 {
-    QProcess::startDetached("cutefish-settings", QStringList() << "-m" << "background");
+    QProcess::startDetached("matsya-settings", QStringList() << "-m" << "background");
 }
 
 void FolderModel::openDeleteDialog()
@@ -1394,7 +1394,7 @@ void FolderModel::openDeleteDialog()
 void FolderModel::openInNewWindow(const QString &url)
 {
     if (!url.isEmpty()) {
-        QProcess::startDetached("cutefish-filemanager", QStringList() << url);
+        QProcess::startDetached("matsya-filemanager", QStringList() << url);
         return;
     }
 
@@ -1405,7 +1405,7 @@ void FolderModel::openInNewWindow(const QString &url)
     for (const QModelIndex &index : m_selectionModel->selectedIndexes()) {
         KFileItem item = itemForIndex(index);
         if (item.isDir()) {
-            QProcess::startDetached("cutefish-filemanager", QStringList() << item.url().toLocalFile());
+            QProcess::startDetached("matsya-filemanager", QStringList() << item.url().toLocalFile());
         }
     }
 }
@@ -1717,7 +1717,7 @@ void FolderModel::setShowHiddenFiles(bool showHiddenFiles)
         m_dirLister->setShowingDotFiles(m_showHiddenFiles);
         m_dirLister->emitChanges();
 
-        QSettings settings("cutefishos", qApp->applicationName());
+        QSettings settings("matsyaos", qApp->applicationName());
         settings.setValue("showHiddenFiles", m_showHiddenFiles);
 
         emit showHiddenFilesChanged();

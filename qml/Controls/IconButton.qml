@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -16,9 +16,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- 
+
 import QtQuick 2.12
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
@@ -26,19 +26,19 @@ Item {
     height: 24
 
     property alias source: _image.source
-    property color backgroundColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.secondBackgroundColor, 1.3)
-                                                          : FishUI.Theme.secondBackgroundColor
-    property color hoveredColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.secondBackgroundColor, 1.7)
-                                                   : Qt.darker(FishUI.Theme.secondBackgroundColor, 1.2)
-    property color pressedColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.secondBackgroundColor, 1.4)
-                                                     : Qt.darker(FishUI.Theme.secondBackgroundColor, 1.3)
+    property color backgroundColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.secondBackgroundColor, 1.3)
+                                                          : MatsyaUI.Theme.secondBackgroundColor
+    property color hoveredColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.secondBackgroundColor, 1.7)
+                                                   : Qt.darker(MatsyaUI.Theme.secondBackgroundColor, 1.2)
+    property color pressedColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.secondBackgroundColor, 1.4)
+                                                     : Qt.darker(MatsyaUI.Theme.secondBackgroundColor, 1.3)
 
     signal clicked()
 
     Rectangle {
         id: _background
         anchors.fill: parent
-        radius: FishUI.Theme.smallRadius
+        radius: MatsyaUI.Theme.smallRadius
         color: _mouseArea.pressed ? pressedColor : _mouseArea.containsMouse ? control.hoveredColor : control.backgroundColor
     }
 

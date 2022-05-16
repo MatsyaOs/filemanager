@@ -4,8 +4,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Window 2.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.FileManager 1.0 as FM
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0 as FM
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
@@ -49,7 +49,7 @@ Item {
                 anchors.fill: parent
                 source: parent
                 color: "#000000"
-                opacity: FishUI.Theme.darkMode && settings.dimsWallpaper ? 0.4 : 0.0
+                opacity: MatsyaUI.Theme.darkMode && settings.dimsWallpaper ? 0.4 : 0.0
 
                 Behavior on opacity {
                     NumberAnimation {

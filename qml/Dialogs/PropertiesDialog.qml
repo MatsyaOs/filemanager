@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -21,13 +21,13 @@ import QtQuick 2.12
 import QtQuick.Window 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Layouts 1.12
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
 
-    property int widthValue: _mainLayout.implicitWidth + FishUI.Units.largeSpacing * 3
-    property int heightValue: _mainLayout.implicitHeight + FishUI.Units.largeSpacing * 3
+    property int widthValue: _mainLayout.implicitWidth + MatsyaUI.Units.largeSpacing * 3
+    property int heightValue: _mainLayout.implicitHeight + MatsyaUI.Units.largeSpacing * 3
 
     width: widthValue
     height: heightValue
@@ -41,7 +41,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent
-        color: FishUI.Theme.secondBackgroundColor
+        color: MatsyaUI.Theme.secondBackgroundColor
     }
 
     onVisibleChanged: {
@@ -62,16 +62,16 @@ Item {
     ColumnLayout {
         id: _mainLayout
         anchors.fill: parent
-        anchors.leftMargin: FishUI.Units.largeSpacing * 1.5
-        anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-        anchors.topMargin: FishUI.Units.smallSpacing
-        anchors.bottomMargin: FishUI.Units.largeSpacing * 1.5
-        spacing: FishUI.Units.largeSpacing
+        anchors.leftMargin: MatsyaUI.Units.largeSpacing * 1.5
+        anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+        anchors.topMargin: MatsyaUI.Units.smallSpacing
+        anchors.bottomMargin: MatsyaUI.Units.largeSpacing * 1.5
+        spacing: MatsyaUI.Units.largeSpacing
 
         RowLayout {
-            spacing: FishUI.Units.largeSpacing * 2
+            spacing: MatsyaUI.Units.largeSpacing * 2
 
-            FishUI.IconItem {
+            MatsyaUI.IconItem {
                 width: 64
                 height: 64
                 source: main.iconName
@@ -89,8 +89,8 @@ Item {
 
         GridLayout {
             columns: 2
-            columnSpacing: FishUI.Units.largeSpacing
-            rowSpacing: FishUI.Units.largeSpacing
+            columnSpacing: MatsyaUI.Units.largeSpacing
+            rowSpacing: MatsyaUI.Units.largeSpacing
             Layout.alignment: Qt.AlignTop
 
             onHeightChanged: updateWindowSize()
@@ -99,7 +99,7 @@ Item {
             Label {
                 text: qsTr("Type:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
                 visible: mimeType.visible
             }
 
@@ -112,7 +112,7 @@ Item {
             Label {
                 text: qsTr("Location:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
             }
 
             Label {
@@ -123,7 +123,7 @@ Item {
             Label {
                 text: qsTr("Size:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
             }
 
             Label {
@@ -134,7 +134,7 @@ Item {
             Label {
                 text: qsTr("Created:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
                 visible: creationTime.visible
             }
 
@@ -147,7 +147,7 @@ Item {
             Label {
                 text: qsTr("Modified:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
                 visible: modifiedTime.visible
             }
 
@@ -160,7 +160,7 @@ Item {
             Label {
                 text: qsTr("Accessed:")
                 Layout.alignment: Qt.AlignRight
-                color: FishUI.Theme.disabledTextColor
+                color: MatsyaUI.Theme.disabledTextColor
                 visible: accessTime.visible
             }
 
@@ -172,12 +172,12 @@ Item {
         }
 
         Item {
-            height: FishUI.Units.smallSpacing
+            height: MatsyaUI.Units.smallSpacing
         }
 
         RowLayout {
             Layout.alignment: Qt.AlignRight
-            spacing: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

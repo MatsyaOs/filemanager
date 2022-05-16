@@ -19,9 +19,9 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import FishUI 1.0 as FishUI
-import Cutefish.FileManager 1.0
-import Cutefish.DragDrop 1.0 as DragDrop
+import MatsyaUI 1.0 as MatsyaUI
+import Matsya.FileManager 1.0
+import Matsya.DragDrop 1.0 as DragDrop
 
 ListView {
     id: control
@@ -47,7 +47,7 @@ ListView {
     property Item editor: null
     property int anchorIndex: 0
 
-    property var itemHeight: FishUI.Units.fontMetrics.height * 2 + FishUI.Units.smallSpacing
+    property var itemHeight: MatsyaUI.Units.fontMetrics.height * 2 + MatsyaUI.Units.smallSpacing
 
     property variant cachedRectangleSelection: null
 
@@ -60,7 +60,7 @@ ListView {
     ScrollBar.vertical: ScrollBar { }
     boundsBehavior: Flickable.StopAtBounds
 
-    FishUI.WheelHandler {
+    MatsyaUI.WheelHandler {
         target: control
     }
 
@@ -450,10 +450,10 @@ ListView {
             background: Item {
                 Rectangle {
                     anchors.fill: parent
-                    anchors.topMargin: FishUI.Units.smallSpacing
-                    anchors.bottomMargin: FishUI.Units.smallSpacing
-                    radius: FishUI.Theme.smallRadius
-                    color: FishUI.Theme.backgroundColor
+                    anchors.topMargin: MatsyaUI.Units.smallSpacing
+                    anchors.bottomMargin: MatsyaUI.Units.smallSpacing
+                    radius: MatsyaUI.Theme.smallRadius
+                    color: MatsyaUI.Theme.backgroundColor
                 }
             }
 
@@ -463,7 +463,7 @@ ListView {
                 if (targetItem != null) {
                     var pos = control.mapFromItem(targetItem, targetItem.labelArea.x, targetItem.labelArea.y)
                     width = targetItem.labelArea.width
-                    height = FishUI.Units.fontMetrics.height + FishUI.Units.largeSpacing * 2
+                    height = MatsyaUI.Units.fontMetrics.height + MatsyaUI.Units.largeSpacing * 2
                     x = control.mapFromItem(targetItem.labelArea, 0, 0).x
                     y = pos.y + (targetItem.height - height) / 2
                     text = targetItem.labelArea.text

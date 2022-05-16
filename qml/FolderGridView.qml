@@ -20,9 +20,9 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 
-import Cutefish.FileManager 1.0
-import Cutefish.DragDrop 1.0 as DragDrop
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0
+import Matsya.DragDrop 1.0 as DragDrop
+import MatsyaUI 1.0 as MatsyaUI
 
 GridView {
     id: control
@@ -258,7 +258,7 @@ GridView {
     }
 
     cellHeight: {
-        var iconHeight = iconSize + (FishUI.Units.fontMetrics.height * 2) + FishUI.Units.largeSpacing * 2
+        var iconHeight = iconSize + (MatsyaUI.Units.fontMetrics.height * 2) + MatsyaUI.Units.largeSpacing * 2
         if (isDesktopView) {
             var extraHeight = calcExtraSpacing(iconHeight, control.height - topMargin - bottomMargin)
             return iconHeight + extraHeight
@@ -267,7 +267,7 @@ GridView {
     }
 
     cellWidth: {
-        var iconWidth = iconSize + FishUI.Units.largeSpacing * 4
+        var iconWidth = iconSize + MatsyaUI.Units.largeSpacing * 4
         var extraWidth = calcExtraSpacing(iconWidth, control.width - leftMargin - rightMargin)
         return iconWidth + extraWidth
     }
@@ -276,7 +276,7 @@ GridView {
     currentIndex: -1
     ScrollBar.vertical: ScrollBar { }
 
-    FishUI.WheelHandler {
+    MatsyaUI.WheelHandler {
         target: control
     }
 
@@ -534,8 +534,8 @@ GridView {
         var step = rows ? cellWidth : cellHeight
         var perStripe = Math.floor(axis / step)
         var stripes = Math.ceil(control.count / perStripe)
-        var cWidth = control.cellWidth - (2 * FishUI.Units.smallSpacing)
-        var cHeight = control.cellHeight - (2 * FishUI.Units.smallSpacing)
+        var cWidth = control.cellWidth - (2 * MatsyaUI.Units.smallSpacing)
+        var cHeight = control.cellHeight - (2 * MatsyaUI.Units.smallSpacing)
         var midWidth = control.cellWidth / 2
         var midHeight = control.cellHeight / 2
         var indices = []
@@ -563,7 +563,7 @@ GridView {
 
                 // Check if the rubberband intersects this cell first to avoid doing more
                 // expensive work.
-                if (control.rubberBand.intersects(Qt.rect(itemX + FishUI.Units.smallSpacing, itemY + FishUI.Units.smallSpacing,
+                if (control.rubberBand.intersects(Qt.rect(itemX + MatsyaUI.Units.smallSpacing, itemY + MatsyaUI.Units.smallSpacing,
                     cWidth, cHeight))) {
                     var item = control.contentItem.childAt(itemX + midWidth, itemY + midHeight)
 
@@ -642,8 +642,8 @@ GridView {
             visible: false
             wrapMode: TextEdit.Wrap
             horizontalAlignment: TextEdit.AlignHCenter
-            topPadding: FishUI.Units.smallSpacing
-            bottomPadding: FishUI.Units.smallSpacing
+            topPadding: MatsyaUI.Units.smallSpacing
+            bottomPadding: MatsyaUI.Units.smallSpacing
             z: 999
 
             property Item targetItem: null
@@ -651,10 +651,10 @@ GridView {
             onTargetItemChanged: {
                 if (targetItem != null) {
                     var pos = control.mapFromItem(targetItem, targetItem.labelArea.x, targetItem.labelArea.y)
-                    width = targetItem.width - FishUI.Units.smallSpacing
-                    height = targetItem.labelArea.paintedHeight + FishUI.Units.largeSpacing * 2
+                    width = targetItem.width - MatsyaUI.Units.smallSpacing
+                    height = targetItem.labelArea.paintedHeight + MatsyaUI.Units.largeSpacing * 2
                     x = targetItem.x + Math.abs(Math.min(control.contentX, control.originX))
-                    y = pos.y - FishUI.Units.smallSpacing
+                    y = pos.y - MatsyaUI.Units.smallSpacing
                     text = targetItem.labelArea.text
                     targetItem.labelArea.visible = false
                     _editor.select(0, dirModel.fileExtensionBoundary(targetItem.index))

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
  *
@@ -21,19 +21,19 @@ import QtQuick 2.12
 import QtQuick.Controls 2.4
 import QtQuick.Layouts 1.3
 import QtGraphicalEffects 1.0
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
 
     property string url: main.url
 
-    width: 400 + FishUI.Units.largeSpacing * 2
-    height: _mainLayout.implicitHeight + FishUI.Units.largeSpacing * 2
+    width: 400 + MatsyaUI.Units.largeSpacing * 2
+    height: _mainLayout.implicitHeight + MatsyaUI.Units.largeSpacing * 2
 
     Rectangle {
         anchors.fill: parent
-        color: FishUI.Theme.secondBackgroundColor
+        color: MatsyaUI.Theme.secondBackgroundColor
     }
 
     Component.onCompleted: {
@@ -71,8 +71,8 @@ Item {
             clip: true
             ScrollBar.vertical: ScrollBar {}
 
-            leftMargin: FishUI.Units.smallSpacing
-            rightMargin: FishUI.Units.smallSpacing
+            leftMargin: MatsyaUI.Units.smallSpacing
+            rightMargin: MatsyaUI.Units.smallSpacing
 
             cellHeight: {
                 var extraHeight = calcExtraSpacing(80, listView.Layout.preferredHeight - topMargin - bottomMargin)
@@ -115,22 +115,22 @@ Item {
 
                 Rectangle {
                     anchors.fill: parent
-                    anchors.margins: FishUI.Units.smallSpacing
-                    radius: FishUI.Theme.mediumRadius
-                    color: isSelected ? FishUI.Theme.highlightColor
-                                      : mouseArea.containsMouse ? Qt.rgba(FishUI.Theme.textColor.r,
-                                                                          FishUI.Theme.textColor.g,
-                                                                          FishUI.Theme.textColor.b,
+                    anchors.margins: MatsyaUI.Units.smallSpacing
+                    radius: MatsyaUI.Theme.mediumRadius
+                    color: isSelected ? MatsyaUI.Theme.highlightColor
+                                      : mouseArea.containsMouse ? Qt.rgba(MatsyaUI.Theme.textColor.r,
+                                                                          MatsyaUI.Theme.textColor.g,
+                                                                          MatsyaUI.Theme.textColor.b,
                                                                           0.1) : "transparent"
                     smooth: true
                 }
 
                 ColumnLayout {
                     anchors.fill: parent
-                    anchors.margins: FishUI.Units.smallSpacing
-                    spacing: FishUI.Units.smallSpacing
+                    anchors.margins: MatsyaUI.Units.smallSpacing
+                    spacing: MatsyaUI.Units.smallSpacing
 
-                    FishUI.IconItem {
+                    MatsyaUI.IconItem {
                         id: icon
                         Layout.preferredHeight: 36
                         Layout.preferredWidth: height
@@ -144,7 +144,7 @@ Item {
                         elide: Text.ElideMiddle
                         Layout.alignment: Qt.AlignHCenter
                         horizontalAlignment: Qt.AlignHCenter
-                        color: isSelected ? FishUI.Theme.highlightedTextColor : FishUI.Theme.textColor
+                        color: isSelected ? MatsyaUI.Theme.highlightedTextColor : MatsyaUI.Theme.textColor
                     }
                 }
             }
@@ -157,15 +157,15 @@ Item {
             enabled: listView.count >= 1
             padding: 0
 
-            Layout.leftMargin: FishUI.Units.largeSpacing
-            Layout.bottomMargin: FishUI.Units.largeSpacing
+            Layout.leftMargin: MatsyaUI.Units.largeSpacing
+            Layout.bottomMargin: MatsyaUI.Units.largeSpacing
         }
 
         RowLayout {
-            spacing: FishUI.Units.largeSpacing
-            Layout.leftMargin: FishUI.Units.largeSpacing
-            Layout.rightMargin: FishUI.Units.largeSpacing
-            Layout.bottomMargin: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
+            Layout.leftMargin: MatsyaUI.Units.largeSpacing
+            Layout.rightMargin: MatsyaUI.Units.largeSpacing
+            Layout.bottomMargin: MatsyaUI.Units.largeSpacing
 
             Button {
                 text: qsTr("Cancel")

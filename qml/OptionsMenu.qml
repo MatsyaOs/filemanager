@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -20,9 +20,9 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
-import FishUI 1.0 as FishUI
+import MatsyaUI 1.0 as MatsyaUI
 
-FishUI.DesktopMenu {
+MatsyaUI.DesktopMenu {
     id: control
 
     MenuItem {
@@ -32,8 +32,8 @@ FishUI.DesktopMenu {
             id: _gridIcon
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: FishUI.Units.largeSpacing
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/grid.svg" : "qrc:/images/light/grid.svg"
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/grid.svg" : "qrc:/images/light/grid.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -43,16 +43,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: _gridIcon.right
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("Icons")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -70,8 +70,8 @@ FishUI.DesktopMenu {
             id: _listIcon
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: FishUI.Units.largeSpacing
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/list.svg" : "qrc:/images/light/list.svg"
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/list.svg" : "qrc:/images/light/list.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -81,16 +81,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: _listIcon.right
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("List")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -112,8 +112,8 @@ FishUI.DesktopMenu {
 //            id: orderByNameIcon
 //            anchors.verticalCenter: parent.verticalCenter
 //            anchors.left: parent.left
-//            anchors.leftMargin: FishUI.Units.largeSpacing
-//            source: FishUI.Theme.darkMode ? "qrc:/images/dark/order_by_name.svg" : "qrc:/images/light/order_by_name.svg"
+//            anchors.leftMargin: MatsyaUI.Units.largeSpacing
+//            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/order_by_name.svg" : "qrc:/images/light/order_by_name.svg"
 //            sourceSize: Qt.size(width, height)
 //            width: 22
 //            height: width
@@ -123,16 +123,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("Name")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             height: width
             width: 22
@@ -150,8 +150,8 @@ FishUI.DesktopMenu {
 //            id: orderByDateIcon
 //            anchors.verticalCenter: parent.verticalCenter
 //            anchors.left: parent.left
-//            anchors.leftMargin: FishUI.Units.largeSpacing
-//            source: FishUI.Theme.darkMode ? "qrc:/images/dark/date.svg" : "qrc:/images/light/date.svg"
+//            anchors.leftMargin: MatsyaUI.Units.largeSpacing
+//            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/date.svg" : "qrc:/images/light/date.svg"
 //            sourceSize: Qt.size(width, height)
 //            width: 22
 //            height: width
@@ -161,16 +161,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("Date")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -185,16 +185,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("Type")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width
@@ -212,8 +212,8 @@ FishUI.DesktopMenu {
 //            id: orderBySizeIcon
 //            anchors.verticalCenter: parent.verticalCenter
 //            anchors.left: parent.left
-//            anchors.leftMargin: FishUI.Units.largeSpacing
-//            source: FishUI.Theme.darkMode ? "qrc:/images/dark/size.svg" : "qrc:/images/light/size.svg"
+//            anchors.leftMargin: MatsyaUI.Units.largeSpacing
+//            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/size.svg" : "qrc:/images/light/size.svg"
 //            sourceSize: Qt.size(width, height)
 //            width: 22
 //            height: width
@@ -223,16 +223,16 @@ FishUI.DesktopMenu {
         Text {
             anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            anchors.leftMargin: FishUI.Units.largeSpacing
+            anchors.leftMargin: MatsyaUI.Units.largeSpacing
             text: qsTr("Size")
-            color: FishUI.Theme.textColor
+            color: MatsyaUI.Theme.textColor
         }
 
         Image {
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: parent.right
-            anchors.rightMargin: FishUI.Units.largeSpacing * 1.5
-            source: FishUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
+            anchors.rightMargin: MatsyaUI.Units.largeSpacing * 1.5
+            source: MatsyaUI.Theme.darkMode ? "qrc:/images/dark/checked.svg" : "qrc:/images/light/checked.svg"
             sourceSize: Qt.size(width, height)
             width: 22
             height: width

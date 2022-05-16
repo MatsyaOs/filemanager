@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -23,8 +23,8 @@ import QtQuick.Layouts 1.12
 import QtGraphicalEffects 1.0
 import Qt.labs.platform 1.0
 
-import Cutefish.FileManager 1.0 as FM
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0 as FM
+import MatsyaUI 1.0 as MatsyaUI
 
 import "./Dialogs"
 
@@ -109,10 +109,10 @@ Item {
         }
     }
 
-    FishUI.AboutDialog {
+    MatsyaUI.AboutDialog {
         id: _aboutDialog
         name: qsTr("File Manager")
-        description: qsTr("A file manager designed for CutefishOS.")
+        description: qsTr("A file manager designed for MatsyaOS.")
         iconSource: "image://icontheme/file-system-manager"
     }
 
@@ -120,25 +120,25 @@ Item {
         id: _background
         anchors.fill: parent
         anchors.rightMargin: 1
-        radius: FishUI.Theme.mediumRadius
-        color: FishUI.Theme.secondBackgroundColor
+        radius: MatsyaUI.Theme.mediumRadius
+        color: MatsyaUI.Theme.secondBackgroundColor
 
         Rectangle {
             id: _topRightRect
             anchors.right: parent.right
             anchors.top: parent.top
-            height: FishUI.Theme.mediumRadius
-            width: FishUI.Theme.mediumRadius
-            color: FishUI.Theme.secondBackgroundColor
+            height: MatsyaUI.Theme.mediumRadius
+            width: MatsyaUI.Theme.mediumRadius
+            color: MatsyaUI.Theme.secondBackgroundColor
         }
 
         Rectangle {
             id: _bottomLeftRect
             anchors.left: parent.left
             anchors.bottom: parent.bottom
-            height: FishUI.Theme.mediumRadius
-            width: FishUI.Theme.mediumRadius
-            color: FishUI.Theme.secondBackgroundColor
+            height: MatsyaUI.Theme.mediumRadius
+            width: MatsyaUI.Theme.mediumRadius
+            color: MatsyaUI.Theme.secondBackgroundColor
         }
     }
 
@@ -193,7 +193,7 @@ Item {
                                     _viewLoader.item.contentWidth, _viewLoader.item.contentHeight)
     }
 
-    FishUI.DesktopMenu {
+    MatsyaUI.DesktopMenu {
         id: folderMenu
 
         MenuItem {
@@ -247,7 +247,7 @@ Item {
 
 //        Rectangle {
 //            anchors.fill: parent
-//            color: FishUI.Theme.backgroundColor
+//            color: MatsyaUI.Theme.backgroundColor
 //            opacity: 0.7
 //        }
 
@@ -257,10 +257,10 @@ Item {
 
         RowLayout {
             anchors.fill: parent
-            anchors.leftMargin: FishUI.Units.smallSpacing
-            anchors.rightMargin: FishUI.Units.smallSpacing
+            anchors.leftMargin: MatsyaUI.Units.smallSpacing
+            anchors.rightMargin: MatsyaUI.Units.smallSpacing
             // anchors.bottomMargin: 1
-            spacing: FishUI.Units.largeSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             Label {
                 Layout.alignment: Qt.AlignLeft
@@ -276,7 +276,7 @@ Item {
                 visible: dirModel.selectionCount >= 1
             }
 
-            FishUI.BusyIndicator {
+            MatsyaUI.BusyIndicator {
                 id: _busyIndicator
                 Layout.alignment: Qt.AlignLeft
                 height: statusBarHeight
@@ -324,10 +324,10 @@ Item {
             model: dirModel
             delegate: FolderGridItem {}
 
-            leftMargin: FishUI.Units.smallSpacing
-            rightMargin: FishUI.Units.largeSpacing
+            leftMargin: MatsyaUI.Units.smallSpacing
+            rightMargin: MatsyaUI.Units.largeSpacing
             topMargin: 0
-            bottomMargin: FishUI.Units.smallSpacing
+            bottomMargin: MatsyaUI.Units.smallSpacing
 
             onIconSizeChanged: {
                 // Save
@@ -347,11 +347,11 @@ Item {
             id: _folderListView
             model: dirModel
 
-            topMargin: FishUI.Units.smallSpacing
-            leftMargin: FishUI.Units.largeSpacing
-            rightMargin: FishUI.Units.largeSpacing
-            bottomMargin: FishUI.Units.smallSpacing
-            spacing: FishUI.Units.largeSpacing
+            topMargin: MatsyaUI.Units.smallSpacing
+            leftMargin: MatsyaUI.Units.largeSpacing
+            rightMargin: MatsyaUI.Units.largeSpacing
+            bottomMargin: MatsyaUI.Units.smallSpacing
+            spacing: MatsyaUI.Units.largeSpacing
 
             onCountChanged: {
                 _fileTips.visible = count === 0
@@ -370,7 +370,7 @@ Item {
             width: 0
             height: 0
             z: 99999
-            color: FishUI.Theme.highlightColor
+            color: MatsyaUI.Theme.highlightColor
 
             function close() {
                 opacityAnimation.restart()

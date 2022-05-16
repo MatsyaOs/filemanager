@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -22,8 +22,8 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.0
 
-import Cutefish.FileManager 1.0
-import FishUI 1.0 as FishUI
+import Matsya.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
 
 Item {
     id: control
@@ -63,14 +63,14 @@ Item {
     Rectangle {
         id: _background
         width: Math.max(_iconItem.width, _label.paintedWidth)
-        height: _iconItem.height + _label.paintedHeight + FishUI.Units.largeSpacing
+        height: _iconItem.height + _label.paintedHeight + MatsyaUI.Units.largeSpacing
         x: (parent.width - width) / 2
         y: _iconItem.y
 
         // (Deprecated) Rectangle rounded corner.
-        //color: selected || hovered ? FishUI.Theme.highlightColor : "transparent"
+        //color: selected || hovered ? MatsyaUI.Theme.highlightColor : "transparent"
         color: "transparent"
-        // radius: FishUI.Theme.mediumRadius
+        // radius: MatsyaUI.Theme.mediumRadius
         // visible: selected || hovered
         // opacity: selected ? 1.0 : 0.2
     }
@@ -79,11 +79,11 @@ Item {
         id: _iconItem
         anchors.top: parent.top
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: FishUI.Units.smallSpacing
-        anchors.bottomMargin: FishUI.Units.smallSpacing
+        anchors.topMargin: MatsyaUI.Units.smallSpacing
+        anchors.bottomMargin: MatsyaUI.Units.smallSpacing
         z: 2
 
-        width: parent.width - FishUI.Units.largeSpacing * 2
+        width: parent.width - MatsyaUI.Units.largeSpacing * 2
         height: control.GridView.view.iconSize
 
         opacity: model.isHidden ? 0.5 : 1.0
@@ -103,9 +103,9 @@ Item {
         Image {
             id: _image
             anchors.fill: parent
-            anchors.topMargin: FishUI.Units.smallSpacing
-            anchors.leftMargin: FishUI.Units.smallSpacing
-            anchors.rightMargin: FishUI.Units.smallSpacing
+            anchors.topMargin: MatsyaUI.Units.smallSpacing
+            anchors.leftMargin: MatsyaUI.Units.smallSpacing
+            anchors.rightMargin: MatsyaUI.Units.smallSpacing
             fillMode: Image.PreserveAspectFit
             visible: status === Image.Ready
             horizontalAlignment: Qt.AlignHCenter
@@ -147,7 +147,7 @@ Item {
             id: _selectedColorOverlay
             anchors.fill: _iconItem
             source: _iconItem
-            color: FishUI.Theme.highlightColor
+            color: MatsyaUI.Theme.highlightColor
             opacity: 0.5
             visible: control.selected
         }
@@ -167,28 +167,28 @@ Item {
         z: 2
         anchors.top: _iconItem.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: FishUI.Units.smallSpacing
+        anchors.topMargin: MatsyaUI.Units.smallSpacing
         maximumLineCount: control.selected ? 3 : 2
         horizontalAlignment: Text.AlignHCenter
-        width: parent.width - FishUI.Units.largeSpacing * 2 - FishUI.Units.smallSpacing
+        width: parent.width - MatsyaUI.Units.largeSpacing * 2 - MatsyaUI.Units.smallSpacing
         textFormat: Text.PlainText
         elide: Qt.ElideRight
         wrapMode: Text.Wrap
         text: control.fileName
         color: control.GridView.view.isDesktopView ? "white"
-                                                   : selected ? FishUI.Theme.highlightColor
-                                                              : FishUI.Theme.textColor
+                                                   : selected ? MatsyaUI.Theme.highlightColor
+                                                              : MatsyaUI.Theme.textColor
         opacity: model.isHidden ? 0.8 : 1.0
     }
 
     Rectangle {
         z: 1
-        x: _label.x + (_label.width - _label.paintedWidth) / 2 - (FishUI.Units.smallSpacing / 2)
+        x: _label.x + (_label.width - _label.paintedWidth) / 2 - (MatsyaUI.Units.smallSpacing / 2)
         y: _label.y
-        width: _label.paintedWidth + FishUI.Units.smallSpacing
+        width: _label.paintedWidth + MatsyaUI.Units.smallSpacing
         height: _label.paintedHeight
         radius: 4
-        color: FishUI.Theme.highlightColor
+        color: MatsyaUI.Theme.highlightColor
 
         opacity: {
             if (control.selected && control.GridView.view.isDesktopView)
@@ -211,7 +211,7 @@ Item {
         z: 1
         horizontalOffset: 1
         verticalOffset: 1
-        radius: Math.round(4 * FishUI.Units.devicePixelRatio)
+        radius: Math.round(4 * MatsyaUI.Units.devicePixelRatio)
         samples: radius * 2 + 1
         spread: 0.35
         color: Qt.rgba(0, 0, 0, 0.3)

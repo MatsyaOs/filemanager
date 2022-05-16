@@ -1,8 +1,9 @@
 /*
  * Copyright (C) 2021 CutefishOS Team.
+ *Copyright (C) 2022 MatsyaOS Team.
  *
  * Author:     Reion Wong <reionwong@gmail.com>
- *
+ *Author: Abhishek Sharma
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -81,9 +82,9 @@ bool FileLauncher::launchExecutable(const QString &fileName)
 
 bool FileLauncher::startDetached(const QString &exec, QStringList args)
 {
-    QDBusInterface iface("com.cutefish.Session",
+    QDBusInterface iface("com.matsyaos.Session",
                          "/Session",
-                         "com.cutefish.Session", QDBusConnection::sessionBus());
+                         "com.matsya.Session", QDBusConnection::sessionBus());
 
     if (iface.isValid()) {
         iface.asyncCall("launch", exec, args).waitForFinished();
@@ -96,9 +97,9 @@ bool FileLauncher::startDetached(const QString &exec, QStringList args)
 
 bool FileLauncher::startDetached(const QString &exec, const QString &workingDir, QStringList args)
 {
-    QDBusInterface iface("com.cutefish.Session",
+    QDBusInterface iface("com.matsya.Session",
                          "/Session",
-                         "com.cutefish.Session", QDBusConnection::sessionBus());
+                         "com.matsya.Session", QDBusConnection::sessionBus());
 
     if (iface.isValid()) {
         iface.asyncCall("launch", exec, workingDir, args).waitForFinished();

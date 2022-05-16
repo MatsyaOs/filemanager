@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2021 CutefishOS Team.
+ * Copyright (C) 2021 MatsyaOS Team.
  *
  * Author:     revenmartin <revenmartin@gmail.com>
  *
@@ -23,8 +23,8 @@ import QtQuick.Controls 2.12
 import QtQuick.Window 2.12
 import QtGraphicalEffects 1.0
 
-import FishUI 1.0 as FishUI
-import Cutefish.FileManager 1.0
+import MatsyaUI 1.0 as MatsyaUI
+import Matsya.FileManager 1.0
 
 ListView {
     id: sideBar
@@ -32,7 +32,7 @@ ListView {
     signal clicked(string path)
     signal openInNewWindow(string path)
 
-    FishUI.WheelHandler {
+    MatsyaUI.WheelHandler {
         target: sideBar
     }
 
@@ -48,13 +48,13 @@ ListView {
     model: placesModel
     clip: true
 
-    leftMargin: FishUI.Units.smallSpacing * 1.5
-    rightMargin: FishUI.Units.smallSpacing * 1.5
-    bottomMargin: FishUI.Units.smallSpacing
-    spacing: FishUI.Units.smallSpacing
+    leftMargin: MatsyaUI.Units.smallSpacing * 1.5
+    rightMargin: MatsyaUI.Units.smallSpacing * 1.5
+    bottomMargin: MatsyaUI.Units.smallSpacing
+    spacing: MatsyaUI.Units.smallSpacing
 
     ScrollBar.vertical: ScrollBar {
-        bottomPadding: FishUI.Units.smallSpacing
+        bottomPadding: MatsyaUI.Units.smallSpacing
     }
 
     highlightFollowsCurrentItem: true
@@ -62,32 +62,32 @@ ListView {
     highlightResizeDuration : 0
 
     highlight: Rectangle {
-        radius: FishUI.Theme.mediumRadius
-        color: FishUI.Theme.secondBackgroundColor
+        radius: MatsyaUI.Theme.mediumRadius
+        color: MatsyaUI.Theme.secondBackgroundColor
         smooth: true
 
         Rectangle {
             anchors.fill: parent
-            radius: FishUI.Theme.mediumRadius
-            color: Qt.rgba(FishUI.Theme.highlightColor.r,
-                           FishUI.Theme.highlightColor.g,
-                           FishUI.Theme.highlightColor.b, FishUI.Theme.darkMode ? 0.3 : 0.2)
+            radius: MatsyaUI.Theme.mediumRadius
+            color: Qt.rgba(MatsyaUI.Theme.highlightColor.r,
+                           MatsyaUI.Theme.highlightColor.g,
+                           MatsyaUI.Theme.highlightColor.b, MatsyaUI.Theme.darkMode ? 0.3 : 0.2)
         }
     }
 
     section.property: "category"
     section.delegate: Item {
         width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
-        height: FishUI.Units.fontMetrics.height + FishUI.Units.largeSpacing + FishUI.Units.smallSpacing
+        height: MatsyaUI.Units.fontMetrics.height + MatsyaUI.Units.largeSpacing + MatsyaUI.Units.smallSpacing
 
         Text {
             anchors.left: parent.left
             anchors.top: parent.top
-            anchors.leftMargin: Qt.application.layoutDirection === Qt.RightToLeft ? 0 : FishUI.Units.smallSpacing
-            anchors.rightMargin: FishUI.Units.smallSpacing
-            anchors.topMargin: FishUI.Units.largeSpacing
-            anchors.bottomMargin: FishUI.Units.smallSpacing
-            color: FishUI.Theme.textColor
+            anchors.leftMargin: Qt.application.layoutDirection === Qt.RightToLeft ? 0 : MatsyaUI.Units.smallSpacing
+            anchors.rightMargin: MatsyaUI.Units.smallSpacing
+            anchors.topMargin: MatsyaUI.Units.largeSpacing
+            anchors.bottomMargin: MatsyaUI.Units.smallSpacing
+            color: MatsyaUI.Theme.textColor
             font.pointSize: 9
             font.bold: true
             text: section
@@ -97,11 +97,11 @@ ListView {
     delegate: Item {
         id: _item
         width: ListView.view.width - ListView.view.leftMargin - ListView.view.rightMargin
-        height: FishUI.Units.fontMetrics.height + FishUI.Units.largeSpacing * 1.5
+        height: MatsyaUI.Units.fontMetrics.height + MatsyaUI.Units.largeSpacing * 1.5
 
         property bool checked: sideBar.currentIndex === index
-        property color hoveredColor: FishUI.Theme.darkMode ? Qt.lighter(FishUI.Theme.backgroundColor, 1.1)
-                                                         : Qt.darker(FishUI.Theme.backgroundColor, 1.1)
+        property color hoveredColor: MatsyaUI.Theme.darkMode ? Qt.lighter(MatsyaUI.Theme.backgroundColor, 1.1)
+                                                         : Qt.darker(MatsyaUI.Theme.backgroundColor, 1.1)
         MouseArea {
             id: _mouseArea
             anchors.fill: parent
@@ -119,7 +119,7 @@ ListView {
             }
         }
 
-        FishUI.DesktopMenu {
+        MatsyaUI.DesktopMenu {
             id: _menu
 
             MenuItem {
@@ -175,13 +175,13 @@ ListView {
 
         Rectangle {
             anchors.fill: parent
-            radius: FishUI.Theme.mediumRadius
-            color: _mouseArea.pressed ? Qt.rgba(FishUI.Theme.textColor.r,
-                                               FishUI.Theme.textColor.g,
-                                               FishUI.Theme.textColor.b, FishUI.Theme.darkMode ? 0.05 : 0.1) :
-                   _mouseArea.containsMouse && !checked ? Qt.rgba(FishUI.Theme.textColor.r,
-                                                                  FishUI.Theme.textColor.g,
-                                                                  FishUI.Theme.textColor.b, FishUI.Theme.darkMode ? 0.1 : 0.05) :
+            radius: MatsyaUI.Theme.mediumRadius
+            color: _mouseArea.pressed ? Qt.rgba(MatsyaUI.Theme.textColor.r,
+                                               MatsyaUI.Theme.textColor.g,
+                                               MatsyaUI.Theme.textColor.b, MatsyaUI.Theme.darkMode ? 0.05 : 0.1) :
+                   _mouseArea.containsMouse && !checked ? Qt.rgba(MatsyaUI.Theme.textColor.r,
+                                                                  MatsyaUI.Theme.textColor.g,
+                                                                  MatsyaUI.Theme.textColor.b, MatsyaUI.Theme.darkMode ? 0.1 : 0.05) :
                                                           "transparent"
 
             smooth: true
@@ -189,16 +189,16 @@ ListView {
 
         RowLayout {
             anchors.fill: parent
-            anchors.leftMargin: FishUI.Units.smallSpacing
-            anchors.rightMargin: FishUI.Units.smallSpacing
-            spacing: FishUI.Units.smallSpacing
+            anchors.leftMargin: MatsyaUI.Units.smallSpacing
+            anchors.rightMargin: MatsyaUI.Units.smallSpacing
+            spacing: MatsyaUI.Units.smallSpacing
 
             Image {
                 height: 22
                 width: height
                 sourceSize: Qt.size(22, 22)
                 // source: "qrc:/images/dark/" + model.iconPath
-//                source: "qrc:/images/" + (FishUI.Theme.darkMode || checked ? "dark/" : "light/") + model.iconPath
+//                source: "qrc:/images/" + (MatsyaUI.Theme.darkMode || checked ? "dark/" : "light/") + model.iconPath
                 source: "qrc:/images/" + model.iconPath
                 Layout.alignment: Qt.AlignVCenter
                 smooth: false
@@ -206,14 +206,14 @@ ListView {
 
                 layer.enabled: true
                 layer.effect: ColorOverlay {
-                    color: checked ? FishUI.Theme.highlightColor : FishUI.Theme.textColor
+                    color: checked ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.textColor
                 }
             }
 
             Label {
                 id: _label
                 text: model.name
-                color: checked ? FishUI.Theme.highlightColor : FishUI.Theme.textColor
+                color: checked ? MatsyaUI.Theme.highlightColor : MatsyaUI.Theme.textColor
                 elide: Text.ElideRight
                 Layout.fillWidth: true
                 Layout.alignment: Qt.AlignVCenter
